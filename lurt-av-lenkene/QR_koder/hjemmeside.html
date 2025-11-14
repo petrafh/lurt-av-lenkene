@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="no">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informativ Nettside</title>
+
+    <style>
+
+        /* Basic styling */
+        body {
+            font-family: monospace;
+            background-color: #3f4a64;
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #14295c;
+            color: rgb(255, 255, 255);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            grid-template-rows: auto 1fr auto;
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .sidebar {
+            background-color: #14295c;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #14295c;
+            padding: 20px;
+        }
+
+        footer {
+            grid-column: span 2;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        ul{
+            list-style-type: none;
+            font-size: large;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 20px;
+            background-color: #3f4a64;
+        }
+
+        .carousel-item img {
+            max-width: 400px;
+            height: auto;
+            max-height: 400px; /* Juster høyden på bildene her */
+            object-fit: cover;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Responsive design */
+        @media(max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            footer {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Faren med QR-koder</h1>
+    </header>
+
+    <nav>
+        <a href="#">Hjem</a>
+        <a href="#">Om Oss</a>
+        <a href="#">Tjenester</a>
+        <a href="#">Kontakt</a>
+    </nav>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul class="ul.no-bullets">
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+                <li>Lorem impsum</li>
+            </ul>
+        </aside>
+
+        <section class="content">
+            <h2>Hovedinnhold</h2>
+            <!-- Carousel starts here -->
+            <div class="carousel">
+                <div class="carousel-content">
+                    <div class="carousel-item">
+                        <img src="karusell_stock.jpg" alt="AI generert baby">
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Slide 2</h3>
+                        <h1>QR Code Quiz</h1>
+                            <p>Tap the image that represents a QR code:</p>
+                            
+                            <div class="quiz-container">
+                                <!-- Images for the quiz -->
+                                <img src="correct.png" alt="Correct QR Code" onclick="checkAnswer(true)">
+                                <img src="fail.jpg" alt="Wrong Image" onclick="checkAnswer(false)">
+                            </div>
+
+                            <!-- Area to display result -->
+                            <div id="result" class="result"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Slide 3</h3>
+                        <p>Innhold for tredje slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-button" id="prev">Forrige</button>
+                    <button class="carousel-button" id="next">Neste</button>
+                </div>
+            </div>
+            <!-- Carousel ends here -->
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 GRUPPE 4</p>
+    </footer>
+
+
+    <script>
+        const carouselContent = document.querySelector('.carousel-content');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+
+        function updateCarousel() {
+            const offset = currentIndex * -100;
+            carouselContent.style.transform = `translateX(${offset}%)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+
+        function checkAnswer(isCorrect) {
+            const resultElement = document.getElementById('result');
+            if (isCorrect) {
+                resultElement.textContent = 'Correct!';
+            } else {
+                resultElement.textContent = 'Fail!';
+            }
+        }
+
+    </script>
+</body>
+</html>

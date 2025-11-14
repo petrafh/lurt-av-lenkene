@@ -1,0 +1,129 @@
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informativ Nettside</title>
+        <link rel="stylesheet" href="attempt.css">
+    </head>
+
+    <body>
+    <div class="grid-container">
+        <div class="item1">
+            <h4>LURT AV LENKENE</h4>
+            <h2>Lær mer om farene ved QR-koder</h2>
+        </div>
+
+        <div class = "item2">
+            <a href = "Phising.html">
+                <button class="button-28" role="button">Phishing</button>
+            </a>
+            <a href = "Tips.html">
+                <button class="button-28" role="button">Tips mot quishing!</button>
+            </a>
+            
+            <a href = "Quiz.html">
+            <button class="button-28" role="button">QUIZ</button>
+            </a>
+        </div>
+
+        <div class="item3">
+            <div class="hoved">
+                <h1>Du går på campus på NTNU og ser denne plakaten</h1>
+                <img src="scandenne.png" alt="Plakat med QR-kode">
+                <h2>Er det trygt å scanne QR-koden?</h2>
+        
+                <button class="button-28" role="button" onclick="showMessage(true, 'output1')">Ja</button>
+                <button class="button-28" role="button" onclick="showMessage(false, 'output1')">Nei</button>
+                <p class="message" id="output1"></p>
+            </div>
+        
+            <div class="hoved">
+                <h1>Du får en mail fra support.microsoft@outlook.com med dette innholdet.</h1>
+                <img src="scenario2.png" alt="E-post scenario">
+                <h2>Scanner du QR-koden?</h2>
+        
+                <button class="button-28" role="button" onclick="showMessage(true, 'output2')">Ja</button>
+                <button class="button-28" role="button" onclick="showMessage(false, 'output2')">Nei</button>
+                <p class="message" id="output2"></p>
+            </div>
+
+            <div class = "hoved">
+                <h1>Du skal kjøpe deg kaffe på Starbucks og utenfor Starbucks er denne plakaten hengt opp.</h1>
+                <img src="scenario3.png" alt="Stabucks scenario">
+                <h2>Er denne trygg å bruke til å bestille?</h2>
+
+                <button class="button-28" role="button" onclick="showMessage(true, 'output3')">Ja</button>
+                <button class="button-28" role="button" onclick="showMessage(false, 'output3')">Nei</button>
+                <p class="message" id="output3"></p>
+            </div>
+
+            <div class = "hoved">
+                <h1>Du skal parkere med Easypark for første gang, og ser at det er en QR-kode under teksten "Last ned EasyPark-appen".</h1>
+                <img src="scenario4.png" alt="Easypark">
+                <h2>Er denne trygg å bruke?</h2>
+
+                <button class="button-28" role="button" onclick="showMessage(true, 'output4')">Ja</button>
+                <button class="button-28" role="button" onclick="showMessage(false, 'output4')">Nei</button>
+                <p class="message" id="output4"></p>
+            </div>
+
+            <div class = "hoved">
+                <h1>Du ser denne QR-koden for et arrangement.</h1>
+                <img src="scenario5.png" alt="Knit-night">
+                <h2>Er denne QR-koden trygg å scanne?</h2>
+
+                <button class="button-28" role="button" onclick="showMessage(true, 'output5')">Ja</button>
+                <button class="button-28" role="button" onclick="showMessage(false, 'output5')">Nei</button>
+                <p class="message" id="output5"></p>
+            </div>
+        </div>
+
+        <div class="item5">
+            <h1>Litteratur- og figurliste:</h1>
+            <a href = "lenker.html">Klikk her!</a>
+
+        </div>
+    </div>
+
+    </body>
+
+    <script>
+        function showMessage(isYes, outputId) {
+        let message;
+        if (outputId === 'output1') {
+            message = isYes 
+                ? "Feil. Ordet \"trekning\" er skrevet feil, som kan tyde til at plakaten er falsk. Bare fordi logoen til NTNU er på plakaten, så betyr det ikke at plakaten er fra NTNU. Her er det kanskje ikke så åpenbart om plakaten er ekte eller ikke, så da kan man sjekke URLen."
+                : "Riktig! Ordet \"trekning\" er skrevet feil, som kan tyde til at plakaten er falsk. Bare fordi logoen til NTNU er på plakaten, så betyr det ikke at plakaten er fra NTNU. Her er det kanskje ikke så åpenbart om plakaten er ekte eller ikke, så da kan man sjekke URLen.";
+        } else if (outputId === 'output2') {
+            message = isYes 
+                ? "Feil. Her er mailadressen falsk, den er ikke eid av Microsoft."
+                : "Riktig! Her er mailadressen falsk, den er ikke eid av Microsoft.";
+        }
+
+        else if (outputId === 'output3')
+        {
+            message = isYes
+            ? "Riktig! Starbucks har laget sin egen tilpasset QR-kode slik at logoen og merkevarens farger er på QR-koden. Det er viktig å sjekke at siden man blir videreført til også har Starbucks merke tydelig vist fram og at det ikke er hvilken som helst nettside."
+
+            : "Feil, her er det trygt å scanne QR-koden. Starbucks har laget sin egen tilpasset QR-kode slik at logoen og merkevarens farger er på QR-koden. Det er viktig å sjekke at siden man blir videreført til også har Starbucks merke tydelig vist fram og at det ikke er hvilken som helst nettside."
+        }
+
+        else if (outputId === 'output4')
+        {
+            message = isYes
+            ? "Feil. Her er det tydelig at QR-koden er teipet på skiltet. Om Easypark hadde en QR-kode for å laste ned appen, hadde denne vært integrert i designet til plakaten og ikke teipet på."
+
+            : "Rikitig! Her er det tydelig at QR-koden er teipet på skiltet. Om Easypark hadde en QR-kode for å laste ned appen, hadde denne vært integrert i designet til plakaten og ikke teipet på."
+        }
+
+        else if (outputId === 'output5')
+        {
+            message = isYes
+            ? " Rikitg! Her er det tydelig at QR-koden er for å gi videre info om et arrangement da den er integrert i designet."
+
+            : "Feil. Her er det tydelig at QR-koden er for å gi videre info om et arrangement da den er integrert i designet."
+        }
+
+        document.getElementById(outputId).innerText = message;
+    }
+    </script>

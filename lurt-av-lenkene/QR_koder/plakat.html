@@ -1,0 +1,89 @@
+<style>
+.knapp{
+    font-family: monospace;
+    text-align: center;
+    width: 100px;
+    height:auto;
+    border: 2px solid limegreen;
+    border-spacing: 3px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-color: black;
+    color: limegreen;
+}
+
+.hoved{
+    font-family: monospace;
+    text-align: center;
+    width: 600px;
+    height:auto;
+    border: 2px solid limegreen;
+    border-spacing: 3px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    background-color: black;
+    color: limegreen;
+
+}
+
+body{
+    background-image: url('bakgrunn.jpg');
+    justify-content: center;
+}
+
+
+</style>
+
+<body>
+
+<div class = "hoved">
+    <h1>Gratulerer, du er en idiot!</h1>
+</div>
+
+<div class = "hoved">
+    <h1>Det er vel ikke så lurt å scanne en QR-kode du ikke vet noe om?</h1>
+</div>
+
+<div class = "hoved">
+    <h2>Hver eneste dag scanner tusenvis av mennesker helt ukjent QR-koder</h2>
+    <h3>Lorem ipsum dolor sit amet, consectetur 
+        adipiscing elit. Aliquam scelerisque, ipsum
+        quis eleifend faucibus, libero leo egestas
+        elit, in iaculis quam mi quis dui. Curabitur
+        sit amet venenatis urna, ut ullamcorper metus.
+        Sed consequat posuere felis tincidunt feugiat.
+        Vivamus luctus diam nisi, nec sodales leo
+        aliquam in. Vivamus felis diam, bibendum ut
+        purus ut, viverra finibus elit. Vivamus
+        dapibus rutrum dui vel accumsan. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit. Nulla euismod nisi ac sapien
+        mollis malesuada. Morbi euismod tortor sed dolor ornare vestibulum.
+        Quisque interdum ullamcorper viverra. Nulla magna sapien,
+        viverra in dui in, hendrerit vestibulum dui. Cras finibus 
+        dolor erat, ut sagittis turpis molestie non. Vestibulum et 
+        magna sem. Vivamus magna ipsum, pulvinar rutrum dolor at, 
+        viverra egestas metus. Nulla sed ipsum sit amet ante feugiat 
+        blandit. Morbi elementum, nulla ac blandit bibendum, risus diam 
+        faucibus augue, non porttitor arcu erat sit amet ex.
+
+        Morbi lobortis vehicula risus, nec tincidunt velit consequat eu. 
+        Nullam accumsan orci quam, in dapibus eros ultricies at. Aenean 
+        vestibulum dictum lacus in consectetur. Suspendisse semper cursus 
+        tortor sed hendrerit. Etiam in est consequat, convallis mauris at, 
+        volutpat diam. Duis lectus ipsum, molestie in dui in, efficitur 
+        maximus urna. Proin mattis purus pretium massa fermentum, vestibulum 
+        tincidunt tellus tristique. Pellentesque tempus eros id nunc feugiat, 
+        sit amet vehicula ex ullamcorper. Sed tempor velit quis elit luctus</h3>
+
+    <button class = "knapp">Les mer</button>
+</div>
+</body>
+<script>
+    window.onload = function() {
+        // Ny URL som du vil at skal vises i adressefeltet
+        var newUrl = 'Farer_ved_QR_koder';
+
+        // Bruk history.replaceState for å oppdatere URL uten å legge til i historikken
+        window.history.replaceState(null, null, newUrl);
+    };
+</script>
