@@ -1,0 +1,127 @@
+<html lang="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informativ Nettside</title>
+        <link rel="stylesheet" href="QR_hoved.css">
+    </head>
+
+    <body>
+        <div class = "hoved">
+            <h1>QR</h1>
+        </div>
+
+        <div class = "hoved">
+            <h2>Phising</h2>
+        </div>
+
+        <div class = "hoved">
+            <h3>Phishing er en svindelmetode som går ut på at en aktør prøver å få tak i sensitiv informasjon gjennom å fremstå som en legitim kilde. Dette har som regel tatt form gjennom sms-er eller e-post som sender offeret til en nettside som kontrolleres av svindleren.
+            Dette er dermed sterkt knyttet opp mot sosial manipulasjon, da svindleren må forsøke å "lure" offeret med forskjellige typer agn.</h3>
+        </div>
+
+        <div class = "hoved">
+
+        </div>
+
+        <div class = "hoved">
+            <h1>QUIZ overskrift</h1>
+        </div>
+
+        <div class = "hoved">
+            <h2>Kan du se forskjellen på en ekte og en forflakset plakat?</h2>
+        </div>
+
+        <div class = "hoved">
+            <div class="carousel">
+                <div class="carousel-content">
+                    <div class="carousel-item">
+                        slide 1
+                    </div>
+                    <div class="carousel-item">
+                            <h1>Klikk på den du tror er riktig</h1>
+                            
+                            <div class="quiz-container">
+                                <!-- Enkel ja/nei-->
+                                <!--<h1 alt="Correct QR Code" onclick="checkAnswer(true)">Ja</h1>
+                                <h1 alt="Wrong Image" onclick="checkAnswer(false)">Nei</h1> -->
+
+                                <label class="container">One
+                                    <input type="radio" id="html" name="fav_language" value="HTML" onclick="checkAnswer(false)">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                  <label class="container">Two
+                                    <input type="radio" id="html" name="fav_language" value="HTML" onclick="checkAnswer(true)">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                  <label class="container">Three
+                                    <input type="radio" id="html" name="fav_language" value="HTML" onclick="checkAnswer(false)">
+                                    <span class="checkmark"></span>
+                                  </label>
+                                  
+                                  <label class="container">Four
+                                    <input type="radio" id="html" name="fav_language" value="HTML" onclick="checkAnswer(false)">
+                                    <span class="checkmark"></span>
+                                  </label>
+
+                                <!-- Quiz med bilder (i tilfelle den trengs)-->
+                                <!-- <img src="correct.png" alt="Correct QR Code" onclick="checkAnswer(true)"> -->
+                                <!-- <img src="fail.jpg" alt="Wrong Image" onclick="checkAnswer(false)"> -->
+                            </div>
+                            <div id="result" class="result"></div>
+                    </div>
+                    <div class="carousel-item">
+                        <h3>Slide 3</h3>
+                        <p>Innhold for tredje slide.</p>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-button" id="prev">Forrige</button>
+                    <button class="carousel-button" id="next">Neste</button>
+                </div>
+            </div>
+        </div>
+
+        <div class = "hoved">
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ullamcorper massa tempor odio tempus, convallis aliquet mi congue. Ut congue a lectus et molestie. Sed scelerisque sed orci eget aliquam. Maecenas aliquam pulvinar felis, sodales molestie elit lacinia id. In semper tempus rhoncus. Pellentesque elementum, nulla ut accumsan aliquet, nisl ipsum eleifend ex, vitae hendrerit libero ipsum tincidunt dui. Curabitur ac metus metus. Praesent pulvinar quam ac turpis interdum facilisis. Duis pretium mauris non diam feugiat, a blandit dui pellentesque. Duis venenatis ante quis dolor malesuada tempus. Suspendisse eget arcu at ante sagittis iaculis. Proin ac enim viverra ligula suscipit placerat. Maecenas elementum, nunc vehicula mollis laoreet, lacus quam pretium sapien, vel auctor nulla odio non tortor. Sed mattis, quam nec vestibulum maximus, lorem magna vehicula enim, a lacinia dui nunc vitae magna. Morbi purus tortor, euismod quis fringilla eget, hendrerit vel ligula.</h3>
+        </div>
+
+        <div class = "hoved">
+            <h1>Kildene våre finner du her:</h1>
+            <h3><a href="linker.html">kilder</a></h3>
+        </div>
+    </body>
+
+    <script>
+        const carouselContent = document.querySelector('.carousel-content');
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+
+        function updateCarousel() {
+            const offset = currentIndex * -100;
+            carouselContent.style.transform = `translateX(${offset}%)`;
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+
+        function checkAnswer(isCorrect) {
+            const resultElement = document.getElementById('result');
+            if (isCorrect) {
+                resultElement.textContent = 'Korrekt!';
+            } else {
+                resultElement.textContent = 'Galt svar';
+            }
+        }
+    </script>

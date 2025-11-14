@@ -1,0 +1,199 @@
+
+body{
+  background-color: rgb(34,193,195);
+  background: linear-gradient(purple, rgb(44, 44, 191));
+  color: black;
+}
+
+.item1 { grid-area: header; }
+.item2 {grid-area: under; }
+.item3 { grid-area: main; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'under under under'
+    'main main main'
+    'footer footer footer';
+  gap: 10px;
+  background-color: transparent;
+  padding: 10px;
+  size: auto;
+}
+
+.grid-container > div {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.hoved{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  text-align: center;
+  width: 1100;
+  height:auto;
+  border-spacing: 3px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  background-color: transparent;
+  color: lightblue;
+  border-color: black;
+  border: solid black 2px;
+  border-radius: 10px;
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+/*knapp*/
+.knapp{
+  background-color: transparent;
+  color: hotpink;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 20px;
+  border: transparent;
+}
+
+/* Button 28*/
+
+.button-28 {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #1A1A1A;
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: aqua;
+  cursor: pointer;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  width: 300;
+  height:100; 
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.button-28:disabled {
+  pointer-events: none;
+}
+
+.button-28:hover {
+  color: #fff;
+  background-color: hotpink;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.bilder{
+    width: auto;
+    height:auto;
+    border-spacing: 3px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: transparent   ;
+}
+
+h1{
+  color: hotpink;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+h4{
+  color: hotpink;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: 100px;
+}
+
+h2{
+  font-family: monospace;
+    font-size: large;
+    font-weight: lighter;
+    color: hotpink;
+}
+
+h3{
+    font-family: monospace;
+    font-size: xx-large;
+    font-weight: lighter;
+}
+
+h5{
+  color: hotpink;
+  font-family: monospace;
+  font-weight: bolder;
+}
+
+img{
+  height:auto;
+  width:400;
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+  margin-bottom: 15px;
+}
+
+
+
+.message {
+  font-family: monospace;
+  font-weight: lighter;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: aqua;
+}
+
+ol { 
+  list-style: none; 
+  counter-reset: num; 
+} 
+
+ol li { 
+  counter-increment: num; 
+} 
+
+ol li::before { 
+  content: counter(num) ". "; 
+  color: aqua; 
+}
+
+a {
+  color: #3498db; /* Velg fargen du ønsker */
+  font-family: monospace;
+}
+
+a {
+  color: #3498db; /* Normal farge */
+  text-decoration: none; /* Fjerner understrek */
+}
+
+a:hover {
+  color: #1abc9c; /* Farge når man holder musepekeren over */
+}
+
+a:visited {
+  color: #9b59b6; /* Farge etter at lenken er besøkt */
+}
+
+a:active {
+  color: hotpink; /* Farge når lenken blir klikket på */
+}
